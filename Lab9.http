@@ -1,0 +1,35 @@
+@Lab9_HostAddress = http://localhost:5176
+
+GET {{Lab9_HostAddress}}/cfg
+Accept: */*
+
+###
+
+GET {{Lab9_HostAddress}}/api/Students
+Accept: application/json
+
+###
+
+POST {{Lab9_HostAddress}}/api/Students
+Content-Type: application/json
+
+{
+  "name": "Alexander",
+  "group": 100,
+  "specialization": "Backend"
+}
+
+###
+
+PUT {{Lab9_HostAddress}}/api/Students/1
+Content-Type: application/json
+
+{
+  "name": "Alexander",
+  "group": 100,
+  "specialization": "Frontend"
+}
+
+###
+
+DELETE {{Lab9_HostAddress}}/api/Students/1
