@@ -8,7 +8,8 @@ builder.Services.AddControllers();
 builder.Configuration
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: false, reloadOnChange: true)
-    .AddEnvironmentVariables();
+    .AddEnvironmentVariables()
+    .AddCommandLine(args);
 
 builder.Services.Configure<StudentApiOptions>(
     builder.Configuration.GetRequiredSection("StudentApiSettings"));
